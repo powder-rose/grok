@@ -10,15 +10,14 @@
 const arr = [[1, 2, 3], [4, 5, 6], [7,8,9]]
 
 const nestedArr = (arr, number) => {
-    let result = 0
-   arr.forEach((el, i) => {
-        if (el.includes(number) === true) {
-           result += i
+    let result 
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].includes(number)) {
+            result = i
         }
+    }
         return result
-    });
+    }
   
-}
-
 // console.log(nestedArr([[1, 2, 3], [4, 5, 6], [7,8,9]], 3 ))
 module.exports = nestedArr

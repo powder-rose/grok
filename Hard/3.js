@@ -8,13 +8,18 @@
 */
 
 const camelCase = (string) => {
-   let newString
-    for (let i in string) {
-        newString = string.replaceAll('_', '')
-        
+   let newString = ""
+   let arr = string.split(/[_]/g)
+
+   for (let i = 0; i < arr.length; i++) { 
+        if (i > 0) {
+            newString += arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
+        } else {
+            newString += arr[i]
+        } 
     }
-return newString
+    return newString
 }
 
-console.log(camelCase('web_development'))
+
 module.exports = camelCase
